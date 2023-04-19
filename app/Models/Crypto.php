@@ -8,11 +8,11 @@ class Crypto
     private string $name;
     private string $symbol;
     private int $supply;
-    private int $maxSupply;
-    private Carbon $added;
+    private ?int $maxSupply;
+    private string $added;
     private float $price;
 
-    public function __construct(string $name, string $symbol, int $supply, int $maxSupply, Carbon $added, float $price)
+    public function __construct(string $name, string $symbol, int $supply, ?int $maxSupply, string $added, float $price)
 {
     $this->name = $name;
     $this->symbol = $symbol;
@@ -34,15 +34,15 @@ class Crypto
 
     public function getPrice(): float
     {
-        return $this->price;
+        return round($this->price, 2);
     }
 
-    public function getAdded(): Carbon
+    public function getAdded(): string
     {
-        return Carbon::parse($this->added);
+        return Carbon::parse($this->added)->isoFormat('LL');
     }
 
-    public function getMaxSupply(): int
+    public function getMaxSupply(): ?int
     {
         return $this->maxSupply;
     }
