@@ -63,7 +63,7 @@ class CryptoApi
             if($crypto->getMaxSupply() == null) {
                 echo 'Max cap: Coin doesnt have a maximum cap!' . PHP_EOL;
             } else {
-                echo 'Max cap: ' . number_format($crypto->getMaxSupply()) . PHP_EOL;
+                echo 'Max cap: ' . number_format($crypto->getMaxSupply()) . ' coins' . PHP_EOL;
             }
             echo 'Release date: ' . $crypto->getAdded() . PHP_EOL;
             echo 'Price/coin: €' . $crypto->getPrice() . PHP_EOL;

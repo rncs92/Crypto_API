@@ -5,6 +5,3 @@ use Crypto\CryptoApi;
 
 $client = new CryptoApi();
 $client->display();
-
-
-
