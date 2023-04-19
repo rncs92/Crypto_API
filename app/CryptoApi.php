@@ -36,22 +36,7 @@ class CryptoApi
         return $cryptoData->data;
     }
 
-    /*
-    public function createModel(): Crypto
-    {
-        $crypto = $this->fetchAll();
-        return new Crypto(
-            $crypto->name,
-            $crypto->symbol,
-            $crypto->total_supply,
-            $crypto->max_supply,
-            $crypto->date_added,
-            $crypto->quote->EUR->price
-        );
-    }
-    */
-
-    public function createModelArray(): array
+    private function createModelArray(): array
     {
         $cryptos = $this->fetchAll();
         foreach($cryptos as $crypto) {
