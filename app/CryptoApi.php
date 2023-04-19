@@ -36,6 +36,7 @@ class CryptoApi
         return $cryptoData->data;
     }
 
+    /*
     public function createModel(): Crypto
     {
         $crypto = $this->fetchAll();
@@ -48,6 +49,7 @@ class CryptoApi
             $crypto->quote->EUR->price
         );
     }
+    */
 
     public function createModelArray(): array
     {
@@ -72,9 +74,9 @@ class CryptoApi
             /** @var Crypto $crypto */
             echo 'Name: ' . $crypto->getName() . PHP_EOL;
             echo 'ID: ' . $crypto->getSymbol() . PHP_EOL;
-            echo 'Total supply: ' . number_format($crypto->getSupply()) . PHP_EOL;
+            echo 'Total supply: ' . number_format($crypto->getSupply()) . ' coins' . PHP_EOL;
             if($crypto->getMaxSupply() == null) {
-                echo 'Coin doesnt have a maximum cap!' . PHP_EOL;
+                echo 'Max cap: Coin doesnt have a maximum cap!' . PHP_EOL;
             } else {
                 echo 'Max cap: ' . number_format($crypto->getMaxSupply()) . PHP_EOL;
             }
