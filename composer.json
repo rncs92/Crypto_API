@@ -1,0 +1,20 @@
+{
+    "name": "vendor/crypto",
+    "autoload": {
+        "psr-4": {
+            "Crypto\\": "app/"
+        }
+    },
+    "authors": [
+        {
+            "name": "rncs92",
+            "email": "123461096+rncs92@users.noreply.github.com"
+        }
+    ],
+    "require": {
+        "guzzlehttp/guzzle": "^7.5",
+        "nesbot/carbon": "^2.66",
+      "ext-json": "*",
+      "ext-readline": "*"
+    }
+}
