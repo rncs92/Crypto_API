@@ -144,25 +144,17 @@ class CryptoApi
         }
         echo '[Release date]: ' . $coin->getAdded() . PHP_EOL;
         echo '[Price/coin]: €' . $coin->getPrice() . PHP_EOL;
-        echo 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx' . PHP_EOL;
     }
 
     private function displayAll(Coin $coin): void
     {
-        echo '[Name]: ' . $coin->getName() . PHP_EOL;
-        echo '[ID]: ' . $coin->getSymbol() . PHP_EOL;
-        echo '[Total supply]: ' . number_format($coin->getSupply()) . ' coins' . PHP_EOL;
-        if($coin->getMaxSupply() == null) {
-            echo '[Max cap]: Coin doesnt have a maximum cap!' . PHP_EOL;
-        } else {
-            echo '[Max cap]: ' . number_format($coin->getMaxSupply()) . ' coins' . PHP_EOL;
-        }
-        echo '[Release date]: ' . $coin->getAdded() . PHP_EOL;
-        echo '[Price/coin]: €' . $coin->getPrice() . PHP_EOL;
+        $this->displayCoinInfo($coin);
+        echo '.......................................................' . PHP_EOL;
         echo '[Total market cap]: €' . number_format($coin->getMarketCap()) . PHP_EOL;
         echo '[24hour trading volume]: €' . number_format($coin->getVolume()) . PHP_EOL;
         echo '[Value change in 1h]: ' . $coin->getChange1h() . '%' . PHP_EOL;
         echo '[Value change in 24h]: ' . $coin->getChange24h() . '%' . PHP_EOL;
         echo '[Value change in 7 days]: ' . $coin->getChange7d() . '%' . PHP_EOL;
     }
+
 }
