@@ -30,7 +30,7 @@ class Application
             }
             switch ($command) {
                 case 1:
-                    $this->cryptoApi->info();
+                    $this->cryptoApi->coinsInfo();
                     break;
                 case 2:
                     $this->cryptoApi->marketMovements();
