@@ -17,11 +17,16 @@ class Coin
     private float $change7d;
     private int $marketCap;
 
-    public function __construct(string $name, string $symbol,
-                                int $supply, ?int $maxSupply,
-                                string $added, float $price,
-                                int $volume, float $change1h,
-                                float $change24h, float $change7d,
+    public function __construct(string $name,
+                                string $symbol,
+                                int $supply, ?
+                                int $maxSupply,
+                                string $added,
+                                float $price,
+                                int $volume,
+                                float $change1h,
+                                float $change24h,
+                                float $change7d,
                                 int $marketCap
     )
 {

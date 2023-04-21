@@ -90,6 +90,9 @@ class CryptoApi
                 $matches[] = $this->createCoin($coin);
             }
         };
+        if(!in_array($symbol, $matches)) {
+            echo 'There is no coin with this symbol!' . PHP_EOL;
+        }
         return $matches;
     }
 
@@ -156,5 +159,4 @@ class CryptoApi
         echo '[Value change in 24h]: ' . $coin->getChange24h() . '%' . PHP_EOL;
         echo '[Value change in 7 days]: ' . $coin->getChange7d() . '%' . PHP_EOL;
     }
-
 }
