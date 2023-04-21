@@ -7,27 +7,27 @@ class Coin
 {
     private string $name;
     private string $symbol;
-    private int $supply;
+    private float $supply;
     private ?int $maxSupply;
     private string $added;
     private float $price;
-    private int $volume;
+    private float $volume;
     private float $change1h;
     private float $change24h;
     private float $change7d;
-    private int $marketCap;
+    private float $marketCap;
 
     public function __construct(string $name,
                                 string $symbol,
-                                int $supply, ?
-                                int $maxSupply,
+                                float $supply,
+                                ?int $maxSupply,
                                 string $added,
                                 float $price,
-                                int $volume,
+                                float $volume,
                                 float $change1h,
                                 float $change24h,
                                 float $change7d,
-                                int $marketCap
+                                float $marketCap
     )
 {
     $this->name = $name;
@@ -63,7 +63,7 @@ class Coin
         return Carbon::parse($this->added)->isoFormat('LL');
     }
 
-    public function getMaxSupply(): ?int
+    public function getMaxSupply(): ?float
     {
         return $this->maxSupply;
     }
@@ -88,12 +88,12 @@ class Coin
         return round($this->change24h, 3);
     }
 
-    public function getMarketCap(): int
+    public function getMarketCap(): float
     {
         return $this->marketCap;
     }
 
-    public function getVolume(): int
+    public function getVolume(): float
     {
         return $this->volume;
     }

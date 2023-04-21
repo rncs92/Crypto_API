@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace Crypto;
 
@@ -20,6 +20,7 @@ class Application
             echo "Select 1: Get info about selected amount of coins" . PHP_EOL;
             echo "Select 2: Get info about market movements" . PHP_EOL;
             echo "Select 3: Get all info about specific coin(by symbol)" . PHP_EOL;
+            echo "Select 4: Coin calculator" . PHP_EOL;
             echo "Select 0: Exit" . PHP_EOL;
             echo 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx' . PHP_EOL;
 
@@ -37,6 +38,9 @@ class Application
                     break;
                 case 3:
                     $this->cryptoApi->coinInfo();
+                    break;
+                case 4:
+                    $this->cryptoApi->coinCalculator();
                     break;
                 default:
                     echo "Sorry, I don't understand you.." . PHP_EOL;

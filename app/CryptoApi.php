@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace Crypto;
 use Crypto\Models\Coin;
@@ -89,9 +89,10 @@ class CryptoApi
             if($symbol == $coin->symbol) {
                 $matches[] = $this->createCoin($coin);
             }
-        };
-        if(!in_array($symbol, $matches)) {
+        }
+        if(empty($matches)) {
             echo 'There is no coin with this symbol!' . PHP_EOL;
+            exit;
         }
         return $matches;
     }
@@ -102,6 +103,16 @@ class CryptoApi
             /** @var Coin $coin */
            $this->displayAll($coin);
         }
+    }
+
+    public function coinCalculator(): void
+    {
+        $matches = $this->createModel();
+        $amount = readline('How many coins you would like to buy?: ');
+        $result =  $amount * $matches[0]->getPrice();
+
+        echo 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx' . PHP_EOL;
+        echo "Buying $amount {$matches[0]->getName()} coins would cost you €{$result}" . PHP_EOL;
     }
 
     private function createCoin(\stdClass $coin): Coin
